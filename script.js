@@ -26,7 +26,8 @@ function updateTime(){
 
     }
 
-    HR.innerText = currHour % 12 < 10 ? "0" + currHour % 12 : currHour % 12;
+    currHour = currHour > 12 ? currHour == 24 ? currHour / 2 : currHour % 12 : currHour;
+    HR.innerText = currHour < 10 ? "0" + currHour: currHour;
     MIN.innerText = currMin < 10 ? "0" + currMin : currMin;
     SEC.innerText = currSec < 10 ? "0" + currSec : currSec;
 }
